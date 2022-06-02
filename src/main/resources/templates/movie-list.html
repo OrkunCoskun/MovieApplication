@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="/css/style.css">
+	<meta charset="UTF-8">
+	<title>Movie List</title>
+</head>
+
+<body>
+<div class="listContainerDetail">
+<div class="container">
+	<h2 th:text="#{listOfMoviesTitle}"></h2>
+	<div th:unless="${#lists.isEmpty(movies)}">
+		<table class="box">
+			<tr class="headerTable">
+				<th></th>
+				<th th:text="#{movieTitleLabel}"></th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr th:each="m : ${movies}">
+				<td style="text-align: center;"><a th:href="'/movie/delete/' + ${m.id}"><img src="/img/delete.png" width="20"></a></td>
+				<td th:text="${m.movieTitle}"></td>
+				<td><a class="btn" th:href="'/movie/' + ${m.id}" th:text="#{moreLabel}"></a></td>
+				<td><a class="btn" th:href="'/movie/update/' + ${m.id}" th:text="#{editLabel}"></a></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div th:if="${#lists.isEmpty(movies)}">
+		<p class="small-italic" th:text="#{noDataFound}"></p>
+	</div>
+	<p class="cntr bg"><span th:text="#{showMovies}"></span> | <a href="/movie/new" th:text="#{addMovies}"></a></p>
+	<p class="cntr bg"><a href="/list-movies?language=tr">Türkçe</a> | <a href="/list-movies?language=en">English</a></p>
+	</div>
+	</div>
+</body>
+
+</html>

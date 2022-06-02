@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="/css/style.css">
+	<meta charset="UTF-8">
+	<title>Movie Info</title>
+</head>
+
+<body>
+	<div>
+		<div class="container">
+			<h2 th:text="#{viewInfoTitle}"></h2>
+			<table class="box">
+				<tr>
+					<td th:text="#{movieTitleLabel}"></td>
+					<td th:text="${movie.movieTitle}"></td>
+				</tr>
+				<tr>
+					<td th:text="#{movieYearLabel}"></td>
+					<td th:text="${movie.movieYear}"></td>
+				</tr>
+				<tr>
+					<td th:text="#{movieTimeLabel}"></td>
+					<td th:text="${movie.movieTime}"></td>
+				</tr>
+				<tr>
+					<td th:text="#{movieLanguageLabel}"></td>
+					<td th:text="${movie.movieLang}"></td>
+				</tr>
+				<tr>
+					<td th:text="#{movieDateReleaseLabel}"></td>
+					<td th:text="${#temporals.format(movie.movieDtRel, 'dd.MM.yyyy')}"></td>
+				</tr>
+				<tr>
+					<td th:text="#{movieReleaseCountryLabel}"></td>
+					<td th:text="${movie.movieRelCountry}"></td>
+				</tr>
+				<tr>
+					<td th:text="#{movieDirectorLabel}"></td>
+					<td th:text="${movie.movieDirector}"></td>
+				</tr>
+				<tr>
+					<td th:text="#{movieGenreLabel}"></td>
+					<td th:text="${movie.movieGenre}"></td>
+				</tr>
+			</table>
+
+			<h2 th:text="#{actorNamesLabel}"></h2>
+
+			<div th:unless="${#lists.isEmpty(movie.actors)}">
+				<table class="box">
+					<tr class="headerTable">
+						<th></th>
+						<th th:text="#{actorNameTabel}"></th>
+						<th th:text="#{actorRoleTabel}"></th>
+					</tr>
+
+					<tr th:each="ac : ${movie.actors}">
+						<td style="text-align: center;"><a
+								th:href="'/movie/actor/delete/' + ${movie.id} + '/' + ${ac.id}"><img
+									src="/img/delete.png" width="20"></a></td>
+						<td style="text-align: center;" th:text="${ac.getFullName}"></td>
+						<td style="text-align: center;" th:text="${ac.role}"></td>
+					</tr>
+				</table>
+			</div>
+
+			<div th:if="${#lists.isEmpty(movie.actors)}">
+				<p class="small-italic" th:text="#{noActorFound}"></p>
+			</div>
+
+			<h2 th:text="#{addNewActorLabel}"></h2>
+			<div class="formList">
+				<form action="/movie/actor/add" method="post" th:object="${actor}">
+					<div class="item">
+						<span th:text="#{actorNameLabel}">></span>
+						<span>
+							<input type="text" th:field="*{firstName}">
+							<span th:errors="*{firstName}" class="error"></span>
+						</span>
+					</div>
+					<div class="item">
+						<span th:text="#{actorSurnameLabel}">></span>
+						<span>
+							<input type="text" th:field="*{lastName}">
+							<span th:errors="*{lastName}" class="error"></span>
+						</span>
+					</div>
+					<div class="item">
+						<span th:text="#{actorRoleLabel}">></span>
+						<span>
+							<input type="text" th:field="*{role}">
+							<span th:errors="*{role}" class="error"></span>
+						</span>
+					</div>
+					<input type="hidden" name="movie.id" th:value="*{movie.id}">
+					<input type="submit" class="save" th:value="#{addButtonLabel}"><br>
+				</form>
+			</div>
+
+			<p class="cntr bg"><a href="/list-movies" th:text="#{showMovies}"></a> | <a href="/movie/new" th:text="#{addMovies}"></a></p>
+			<p class="cntr bg"><a th:href="'/movie/' + ${id} + '?language=tr'">Türkçe</a> | <a th:href="'/movie/' + ${id} + '?language=en'">English</a></p>
+		</div>
+	</div>
+</body>
+
+</html>

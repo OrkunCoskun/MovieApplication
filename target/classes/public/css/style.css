@@ -1,0 +1,118 @@
+ * {
+    padding: 0;
+    margin: 0;
+    left: 0;
+    top: 0;
+}
+html{
+	background-color: #e9eee3;
+	font-family: 'Trebuchet MS', sans-serif;
+	font-size: 20px;	
+}
+
+h1, h2, h3, h4, h5, h6{
+	color: #000;
+    padding: 15px 0;
+}
+body {
+    background: url(../../img/backgroundImage.png);
+    background-size: cover;
+    height: 100vh;
+}
+input, select {
+	font-family: 'Trebuchet MS', sans-serif;
+	font-size: 16px;	
+}
+.entryContainerDetail {
+    padding: 80px 0;
+}
+
+.listContainerDetail {
+    padding: 30px 0;
+}
+
+.updateContainerDetail {
+    padding: 80px 0;
+}
+
+table, td{
+	border-collapse: collapse;
+	border: 0px;
+	padding: 5px;
+	font-size: 18px;
+}
+
+th{
+	background-color: #4c9599;
+	color: #ffffff;
+	padding: 7px;
+}
+
+.bordered td{
+	border: 1px solid #000000;
+}
+
+.error{
+	color: #ff0000;
+	font-size: 15px;
+}
+
+.box {
+	border: 1px solid #4f4d5459;
+	width:100%;
+}
+.box tr {
+    border-bottom: 1px solid#4f4d5459;
+}
+.box .headerTable th {
+    background: #8160d1;
+}
+.box .btn {
+    background: #283656;
+    color: #fff;
+    padding: 7px 3px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+.container {
+    width: 600px;
+    margin: 0 auto;
+    background: #ffffffd1;
+    padding: 10px 15px;
+}
+.container h2 {
+	text-align: center;
+}
+.container .cntr {
+	text-align: center;
+}
+.bg {background: #000;color: #fff;font-size: 18px;padding: 15px 0;margin-top: 20px;}
+
+.bg a {color: #fff;font-weight: 900;text-decoration: none;}
+
+.small-italic{
+	font-size: 18px;
+	font-style: italic;
+}
+.enterMovie {width: 100%;}
+.enterMovie input {width: 100%;padding: 6px 10px;box-sizing: border-box;border: 1px solid #979d9080;}
+.save {
+    background: #8160d1;
+    width: 150px !important;
+    padding: 11px 0!important;
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.formList input {width: 100%;padding: 6px 10px;box-sizing: border-box;border: 1px solid #979d9080;}
+
+.formList form span {display: flex;flex-wrap: wrap;}
+
+.formList form span:nth-child(1) {width: 30%;}
+
+.formList form span:nth-child(2) {width: 70%;}
+
+.item {display: flex;flex-wrap: wrap;margin-bottom: 20px;}

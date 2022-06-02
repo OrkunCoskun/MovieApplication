@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="/css/style.css">
+	<meta charset="UTF-8">
+	<title>Update Movie</title>
+</head>
+
+<body>
+<div class="updateContainerDetail">
+	<div class="container">
+	<h2 th:text="#{updateTitle}"></h2>
+	<form action="/movie/updateNew" method="post" th:object="${movie}">
+		<table class="enterMovie">
+			<tr>
+			<input type="hidden" th:field="*{id}" />
+			</tr>
+			<tr>
+				<td th:text="#{movieTitleLabel}"></td>
+				<td>
+				<input type="text" th:field="*{movieTitle}">
+				<span th:errors="*{movieTitle}" class="error"></span>
+				</td>
+			</tr>
+			<tr>
+				<td th:text="#{movieYearLabel}"></td>
+				<td>
+				<input type="text" th:field="*{movieYear}">
+				<span th:errors="*{movieYear}" class="error"></span>
+				</td>
+			</tr>
+			<tr>
+				<td th:text="#{movieTimeLabel}"></td>
+				<td>
+				<input type="text" th:field="*{movieTime}">
+				<span th:errors="*{movieTime}" class="error"></span>
+				</td>
+			</tr>
+			<tr>
+				<td th:text="#{movieLanguageLabel}"></td>
+				<td>
+				<input type="text" th:field="*{movieLang}">
+				<span th:errors="*{movieLang}" class="error"></span>
+				</td>
+			</tr>
+			<tr>
+				<td th:text="#{movieDateReleaseLabel}"></td>
+				<td>
+				<input type="text" th:field="*{movieDtRel}">
+				<span th:errors="*{movieDtRel}" class="error"></span >
+				</td>
+				
+			</tr>
+			<tr>
+				<td th:text="#{movieReleaseCountryLabel}"></td>
+				<td>
+				<input type="text" th:field="*{movieRelCountry}">
+				<span th:errors="*{movieRelCountry}" class="error"></span >
+				</td>
+				
+			</tr>
+			<tr>
+				<td th:text="#{movieDirectorLabel}"></td>
+				<td>
+				<input type="text" th:field="*{movieDirector}">
+				<span th:errors="*{movieDirector}" class="error"></span >
+				</td>
+				
+			</tr>
+			<tr>
+				<td th:text="#{movieGenreLabel}"></td>
+				<td>
+				<input type="text" th:field="*{movieGenre}">
+				<span th:errors="*{movieGenre}" class="error"></span >
+				</td>
+				
+			</tr>
+			<tr>
+				<td colspan="3"><input type="submit" class="save" th:value="#{updateButtonLabel}"></td>
+			</tr>
+		</table>
+	</form>
+	<p class="cntr bg"><a href="/list-movies" th:text="#{showMovies}"></a> | <a href="/movie/new" th:text="#{addMovies}"></a></p>
+	<p class="cntr bg"><a th:href="'/movie/update/' + ${id} + '?language=tr'">Türkçe</a> | <a th:href="'/movie/update/' + ${id} + '?language=en'">English</a></p>
+	</div>
+	</div>
+</body>
+
+</html>

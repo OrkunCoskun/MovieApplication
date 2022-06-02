@@ -1,0 +1,23 @@
+insert into tbl_movie(movie_title, movie_year, movie_time, movie_lang, movie_dt_rel, movie_rel_country, movie_director, movie_genre) values('Pirates of the Caribbean: On Stranger Tides', 2011, 137, 'English', parsedatetime('07.05.2011', 'dd.MM.yyyy'), 'USA', 'Gore Verbinski', 'Action');
+insert into tbl_movie(movie_title, movie_year, movie_time, movie_lang, movie_dt_rel, movie_rel_country, movie_director, movie_genre) values('Harry Potter and the Goblet of Fire', 2005, 157, 'English', parsedatetime('18.11.2005', 'dd.MM.yyyy'), 'UK', 'J. K. Rowling ', 'Drama');
+insert into tbl_movie(movie_title, movie_year, movie_time, movie_lang, movie_dt_rel, movie_rel_country, movie_director, movie_genre) values('The Lord of the Rings: The Two Towers', 2002, 179, 'English', parsedatetime('20.12.2002', 'dd.MM.yyyy'), 'USA', 'Peter Jackson', '‎Adventure');
+insert into tbl_movie(movie_title, movie_year, movie_time, movie_lang, movie_dt_rel, movie_rel_country, movie_director, movie_genre) values('A.R.O.G', 2008, 128, 'Turkish', parsedatetime('05.12.2008', 'dd.MM.yyyy'), 'TR', 'Ali Taner Baltacı', 'Science Fiction');
+insert into tbl_movie(movie_title, movie_year, movie_time, movie_lang, movie_dt_rel, movie_rel_country, movie_director, movie_genre) values('The Green Mile', 1994, 189, 'English', parsedatetime('10.12.1999', 'dd.MM.yyyy'), 'USA', 'Frank Darabont', 'Magical Realism Drama');
+insert into tbl_movie(movie_title, movie_year, movie_time, movie_lang, movie_dt_rel, movie_rel_country, movie_director, movie_genre) values('Forrest Gump', 1994, 151, 'English', parsedatetime('11.11.1994', 'dd.MM.yyyy'), 'USA', 'Robert Zemeckis', 'Comedy-Drama');
+insert into tbl_movie(movie_title, movie_year, movie_time, movie_lang, movie_dt_rel, movie_rel_country, movie_director, movie_genre) values('The Shawshank Redemption', 1994, 142, 'English', parsedatetime('23.09.1994', 'dd.MM.yyyy'), 'USA', 'Frank Darabont', 'Drama');
+insert into tbl_movie(movie_title, movie_year, movie_time, movie_lang, movie_dt_rel, movie_rel_country, movie_director, movie_genre) values('Joker', 2010, 122, 'English', parsedatetime('04.10.2019', 'dd.MM.yyyy'), 'USA', 'Todd Phillips', 'Psychological Thriller');
+insert into tbl_movie(movie_title, movie_year, movie_time, movie_lang, movie_dt_rel, movie_rel_country, movie_director, movie_genre) values('The Dark Knight', 2008, 152, 'English', parsedatetime('18.07.2008', 'dd.MM.yyyy'), 'USA,UK', 'Christopher Nolan', 'Action Drama');
+insert into tbl_movie(movie_title, movie_year, movie_time, movie_lang, movie_dt_rel, movie_rel_country, movie_director, movie_genre) values('The Godfather', 1972, 175, 'English', parsedatetime('14.03.1972', 'dd.MM.yyyy'), 'USA', 'Francis Ford Coppola', 'Crime Drama');
+
+insert into tbl_actor(id, act_fname, act_lname, act_role, movie_id) values(1, 'Johnny', 'Depp', 'Jack Sparrow', 1);
+insert into tbl_actor(id, act_fname, act_lname, act_role, movie_id) values(2, 'Daniel', 'Radcliffe', 'Harry Potter', 2);
+insert into tbl_actor(id, act_fname, act_lname, act_role, movie_id) values(3, 'Emma', 'Watson', 'Hermione Granger', 2);
+insert into tbl_actor(id, act_fname, act_lname, act_role, movie_id) values(4, 'Elijah', 'Wood', 'Frodo Baggins', 3);
+insert into tbl_actor(id, act_fname, act_lname, act_role, movie_id) values(5, 'Cem', 'Yılmaz', 'Arif', 4);
+insert into tbl_actor(id, act_fname, act_lname, act_role, movie_id) values(6, 'Michael Clarke', 'Duncan', 'John Coffey', 5);
+insert into tbl_actor(id, act_fname, act_lname, act_role, movie_id) values(7, 'Tom', 'Hanks', 'Forrest Gump', 6);
+insert into tbl_actor(id, act_fname, act_lname, act_role, movie_id) values(8, 'Morgan', 'Freeman', 'Ellis Boyd Redding', 7);
+insert into tbl_actor(id, act_fname, act_lname, act_role, movie_id) values(9, 'Joaquin', 'Phoenix', 'Joker', 8);
+insert into tbl_actor(id, act_fname, act_lname, act_role, movie_id) values(10, 'Christian', 'Bale', 'Batman', 9);
+insert into tbl_actor(id, act_fname, act_lname, act_role, movie_id) values(11, 'Christian', 'Bale', 'Bruce Wayne', 9);
+insert into tbl_actor(id, act_fname, act_lname, act_role, movie_id) values(12, 'Al', 'Pacino', 'Michael Corleone', 10);

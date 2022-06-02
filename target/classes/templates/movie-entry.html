@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="/css/style.css">
+	<meta charset="UTF-8">
+	<title>Enter Movie</title>
+</head>
+
+<body>
+<div class="entryContainerDetail">
+<div class="container">
+	<h2 th:text="#{entryTitle}"></h2>
+	<form action="/movie/add" method="post" th:object="${movie}">
+		<table class="enterMovie">
+			<tr>
+				<td th:text="#{movieTitleLabel}"></td>
+				<td>
+				<input type="text" th:field="*{movieTitle}" th:placeholder="#{movieTitlePlaceholder}">
+				<span th:errors="*{movieTitle}" class="error"></span>
+				</td>
+			</tr>
+			<tr>
+				<td th:text="#{movieYearLabel}"></td>
+				<td>
+				<input type="text" th:field="*{movieYear}" th:placeholder="#{movieYearPlaceholder}">
+				<span th:errors="*{movieYear}" class="error"></span>
+				</td>
+			</tr>
+			<tr>
+				<td th:text="#{movieTimeLabel}"></td>
+				<td>
+				<input type="text" th:field="*{movieTime}" th:placeholder="#{movieTimePlaceholder}">
+				<span th:errors="*{movieTime}" class="error"></span>
+				</td>
+			</tr>
+			<tr>
+				<td th:text="#{movieLanguageLabel}"></td>
+				<td>
+				<input type="text" th:field="*{movieLang}" th:placeholder="#{movieLanguagePlaceholder}">
+				<span th:errors="*{movieLang}" class="error"></span>
+				</td>
+			</tr>
+			<tr>
+				<td th:text="#{movieDateReleaseLabel}"></td>
+				<td>
+				<input type="text" th:field="*{movieDtRel}" th:placeholder="#{movieDateReleasePlaceholder}">
+				<span th:errors="*{movieDtRel}" class="error"></span >
+				</td>
+				
+			</tr>
+			<tr>
+				<td th:text="#{movieReleaseCountryLabel}"></td>
+				<td>
+				<input type="text" th:field="*{movieRelCountry}" th:placeholder="#{movieDateReleaseCountryPlaceholder}">
+				<span th:errors="*{movieRelCountry}" class="error"></span >
+				</td>
+				
+			</tr>
+			<tr>
+				<td th:text="#{movieDirectorLabel}"></td>
+				<td>
+				<input type="text" th:field="*{movieDirector}" th:placeholder="#{movieDirectorPlaceholder}">
+				<span th:errors="*{movieDirector}" class="error"></span >
+				</td>
+				
+			</tr>
+			<tr>
+				<td th:text="#{movieGenreLabel}"></td>
+				<td>
+				<input type="text" th:field="*{movieGenre}" th:placeholder="#{movieGenrePlaceholder}">
+				<span th:errors="*{movieGenre}" class="error"></span >
+				</td>
+				
+			</tr>
+			<tr>
+				<td colspan="3"><input type="submit" class="save" th:value="#{addButtonLabel}"></td>
+			</tr>
+		</table>
+	</form>
+	<p class="cntr bg"><a href="/list-movies" th:text="#{showMovies}"></a> | <span th:text="#{addMovies}"></span></p>
+	<p class="cntr bg"><a href="/movie/new?language=tr">Türkçe</a> | <a href="/movie/new?language=en">English</a></p>
+	</div>
+	</div>
+</body>
+
+</html>
